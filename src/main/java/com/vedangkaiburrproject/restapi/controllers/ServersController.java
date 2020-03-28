@@ -32,8 +32,8 @@ public class ServersController {
             return repository.findAll();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity getServerById(@PathVariable("id") String id)throws NotFoundException {
+    @RequestMapping(value = "/byId", method = RequestMethod.GET)
+    public ResponseEntity getServerById(@RequestParam("id") String id)throws NotFoundException {
         try {
             return new ResponseEntity(repository.findById(id).get(),HttpStatus.OK);
         }
@@ -42,8 +42,8 @@ public class ServersController {
         }
     }
 
-   @RequestMapping(value = "/findby/{name}", method = RequestMethod.GET)
-    public ResponseEntity getByName(@PathVariable("name") String name)throws NotFoundException {
+   @RequestMapping(value = "/byName", method = RequestMethod.GET)
+    public ResponseEntity getByName(@RequestParam("name") String name)throws NotFoundException {
         try {
             return new ResponseEntity(repository.findByName(name),HttpStatus.OK);
         }
@@ -53,8 +53,8 @@ public class ServersController {
     }
 
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Servers updateServerById(@PathVariable("id") ObjectId id, @Valid @RequestBody Servers server) {
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    public Servers updateServerById(@RequestParam("id") ObjectId id, @Valid @RequestBody Servers server) {
         server.setId(id.toString());
         repository.save(server);
         return server;
@@ -68,8 +68,8 @@ public class ServersController {
         return server;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity deleteServerByID(@PathVariable("id") String id) {
+    @RequestMapping(value = "/", method = RequestMethod.DELETE)
+    public ResponseEntity deleteServerByID(@RequestParam("id") String id) {
         repository.delete(repository.findById(id).get());
         return new ResponseEntity("Student deleted successfully",HttpStatus.OK);
     }
