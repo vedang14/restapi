@@ -1,5 +1,5 @@
-Task 1. Java REST API
-Implement an application in java which provides a REST API with endpoints for searching,creating and deleting “server” objects:
+# Java REST API
+Task 1.Implement an application in java which provides a REST API with endpoints for searching,creating and deleting “server” objects:
 
 Created the RestApi application using Spring Boot while at same time mantaining code modularization, tested exposed endpoints using Postman .
 
