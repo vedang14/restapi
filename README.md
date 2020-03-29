@@ -3,4 +3,4 @@ Implement an application in java which provides a REST API with endpoints for se
 
 Outcomes :
 1. Get Request to show list of all available server objects :
-![Alt Text](D:\vedang kaiburr project\restapi\src\main\resources\screenshots\get_req_list_all.jpg raw = true "Title")
+![alt Text](https://github.com/vedang14/restapi/blob/master/get_req_byId.JPG)
